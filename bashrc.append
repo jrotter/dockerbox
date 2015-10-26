@@ -1,0 +1,20 @@
+
+#
+# .bashrc extras imported through Docker build
+#
+
+# Configure jrotter for rvm
+source /home/jrotter/.rvm/scripts/rvm
+
+# Setup environment for Armadillo
+export ARMADILLO_ROOT=/home/jrotter/git/armadillo
+
+if [ -f /home/jrotter/onetime.sh ];
+then
+  if [ ! -f /home/jrotter/.onetime ];
+  then
+    touch /home/jrotter/.onetime
+    nohup xterm -e bash /home/jrotter/onetime.sh &
+  fi
+fi
+
